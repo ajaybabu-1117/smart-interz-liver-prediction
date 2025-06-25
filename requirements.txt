@@ -1,5 +1,5 @@
 flask==2.3.3
-scikit-learn==1.2.2
+scikit-learn==1.2.2  # 👈 downgrade to avoid build failures
 numpy==1.24.4
 pandas==2.1.3
 joblib==1.3.2
