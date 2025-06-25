@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liver Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Liver Disease Predictor</h2>
+        <form action="/predict" method="POST">
+            <input name="age" type="number" placeholder="Age" required>
+            <input name="total_bilirubin" type="number" step="any" placeholder="Total Bilirubin" required>
+            <input name="direct_bilirubin" type="number" step="any" placeholder="Direct Bilirubin" required>
+            <input name="alkaline_phosphotase" type="number" step="any" placeholder="Alkaline Phosphotase" required>
+            <input name="alamine_aminotransferase" type="number" step="any" placeholder="Alamine Aminotransferase" required>
+            <input name="aspartate_aminotransferase" type="number" step="any" placeholder="Aspartate Aminotransferase" required>
+            <input name="total_proteins" type="number" step="any" placeholder="Total Proteins" required>
+            <input name="albumin" type="number" step="any" placeholder="Albumin" required>
+            <input name="albumin_globulin_ratio" type="number" step="any" placeholder="Albumin/Globulin Ratio" required>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

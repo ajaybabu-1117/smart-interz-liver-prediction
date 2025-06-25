@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <p style="text-align: center; font-size: 18px;">{{ prediction_text }}</p>
+        <a href="/"><button>Go Back</button></a>
+    </div>
+</body>
+</html>
