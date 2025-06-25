@@ -5,9 +5,19 @@ import os
 
 app = Flask(__name__)
 
-# Load model and scaler (ensure they are in same folder or use full path)
-model = pickle.load(open('rf_acc_68.pkl', 'rb'))
-scaler = pickle.load(open('normalizer.pkl', 'rb'))
+# Load model and scaler using absolute paths for compatibility
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(base_dir, 'rf_acc_68.pkl')
+scaler_path = os.path.join(base_dir, 'normalizer.pkl')
+
+try:
+    model = pickle.load(open(model_path, 'rb'))
+    scaler = pickle.load(open(scaler_path, 'rb'))
+except FileNotFoundError as e:
+    print(f"❌ File loading error: {e}")
+    model = None
+    scaler = None
 
 @app.route('/')
 def home():
@@ -15,6 +25,9 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    if model is None or scaler is None:
+        return render_template('result.html', prediction_text="❌ Model or Scaler file not found.")
+
     try:
         # Extract features from the form
         features = [
