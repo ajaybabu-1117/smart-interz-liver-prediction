@@ -3,7 +3,7 @@ services:
     name: smart-interz-liver-prediction
     env: python
     buildCommand: pip install --upgrade pip wheel setuptools && pip install -r requirements.txt
-    startCommand: gunicorn Flask.app:app  # 👈 Important: app.py is inside "Flask" folder
+    startCommand: gunicorn Flask.app:app  # 👈 Make sure "Flask" is the folder and "app.py" is inside it
     envVars:
       - key: PYTHON_VERSION
         value: "3.10.12"
