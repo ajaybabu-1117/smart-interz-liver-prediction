@@ -3,7 +3,7 @@ services:
     name: smart-interz-liver-prediction
     env: python
     buildCommand: pip install --upgrade pip wheel setuptools && pip install -r Flask/requirements.txt
-    startCommand: gunicorn Flask.app:app
+    startCommand: gunicorn Flask.app:app  # Correct path to app.py inside Flask/
     envVars:
       - key: PYTHON_VERSION
         value: "3.10.12"
