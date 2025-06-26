@@ -1,14 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Project Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>Project Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f4f7fa;
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0072ff;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #0072ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .back-btn:hover {
+      background-color: #0051cc;
+    }
+
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Project Portfolio</h2>
-        <p>Details about the project, models used, accuracy, data source, etc.</p>
-    </div>
-</body>
-</html>
+
+  <div class="header">
+    <h1>📊 Liver Disease Prediction Web App</h1>
+    <p>Powered by Machine Learning | Streamlined with Flask</p>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h2>🔍 Overview</h2>
+      <p>This project predicts whether a person has liver disease based on medical attributes. It is built using Flask, Python, and deployed on Render. It uses an ML model trained on real liver patient data.</p>
+    </
